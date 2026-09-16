@@ -1,0 +1,16 @@
+query NestedAuthorsAndBooks {
+  authors {
+    id
+    name
+    country
+    books {
+      id
+      title
+      isbn
+      publicationYear
+      publisher { id name city }
+    }
+  }
+}
+
+# Response juga memuat extensions.resolverAudit sebagai counter tugas Sesi 05.

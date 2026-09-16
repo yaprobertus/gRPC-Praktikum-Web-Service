@@ -1,0 +1,10 @@
+query QueryAfterUpdateLab05 {
+  books(search: "Buku Uji Lab 05 Diperbarui") {
+    id
+    title
+    isbn
+    publicationYear
+    author { name }
+    publisher { name }
+  }
+}

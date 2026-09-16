@@ -1,0 +1,22 @@
+mutation CreateAuthor {
+  createAuthor(input: { name: "Tere Liye", country: "Indonesia" }) { id name country }
+}
+
+mutation CreatePublisher {
+  createPublisher(input: { name: "Gramedia Pustaka Utama", city: "Jakarta" }) { id name city }
+}
+
+# Jalankan terpisah setelah mengganti kedua ID dengan hasil mutation di atas.
+mutation CreateBook {
+  createBook(input: {
+    title: "Hujan"
+    isbn: "9786020324784"
+    publicationYear: 2016
+    authorId: "GANTI_ID_AUTHOR"
+    publisherId: "GANTI_ID_PUBLISHER"
+  }) {
+    id title
+    author { name }
+    publisher { name }
+  }
+}

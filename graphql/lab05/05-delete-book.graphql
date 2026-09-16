@@ -1,0 +1,4 @@
+# Ganti nilai id dengan ID dari response createBook pada langkah 1.
+mutation DeleteBookLab05 {
+  deleteBook(id: "GANTI_DENGAN_ID_HASIL_CREATE")
+}

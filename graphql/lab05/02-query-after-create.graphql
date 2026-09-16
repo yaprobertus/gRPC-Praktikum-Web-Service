@@ -1,0 +1,10 @@
+query QueryAfterCreateLab05 {
+  books(search: "Buku Uji Lab 05") {
+    id
+    title
+    isbn
+    publicationYear
+    author { name }
+    publisher { name }
+  }
+}

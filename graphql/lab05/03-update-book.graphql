@@ -1,0 +1,17 @@
+# Ganti nilai id dengan ID dari response createBook pada langkah 1.
+mutation UpdateBookLab05 {
+  updateBook(
+    id: "GANTI_DENGAN_ID_HASIL_CREATE"
+    input: {
+      title: "Buku Uji Lab 05 Diperbarui"
+      publicationYear: 2025
+    }
+  ) {
+    id
+    title
+    isbn
+    publicationYear
+    author { name }
+    publisher { name }
+  }
+}

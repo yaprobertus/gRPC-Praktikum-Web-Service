@@ -1,0 +1,18 @@
+mutation CreateBookLab05 {
+  createBook(
+    input: {
+      title: "Buku Uji Lab 05"
+      isbn: "9786021409206"
+      publicationYear: 2026
+      authorId: "1"
+      publisherId: "1"
+    }
+  ) {
+    id
+    title
+    isbn
+    publicationYear
+    author { name }
+    publisher { name }
+  }
+}

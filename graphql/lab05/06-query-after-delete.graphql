@@ -1,0 +1,7 @@
+query QueryAfterDeleteLab05 {
+  books(search: "Buku Uji Lab 05 Diperbarui") {
+    id
+    title
+    isbn
+  }
+}

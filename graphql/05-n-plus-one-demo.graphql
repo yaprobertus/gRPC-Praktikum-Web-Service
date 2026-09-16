@@ -1,0 +1,16 @@
+query NPlusOneAudit {
+  authors {
+    id
+    name
+    books { title }
+  }
+}
+
+# Bukti N+1 klasik: tambahkan HTTP header Apollo Sandbox
+# { "x-n-plus-one-demo": "true" }
+# totalDatabaseQueries = 1 + jumlah author (N)
+# relationResolverCalls = N
+#
+# Bukti optimasi: hapus header dan jalankan lagi.
+# totalDatabaseQueries = 2 (1 root + 1 batch DataLoader)
+# relationResolverCalls tetap N karena setiap parent tetap di-resolve.

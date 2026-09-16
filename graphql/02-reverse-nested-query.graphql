@@ -1,0 +1,9 @@
+query BooksWithRelations {
+  books {
+    id
+    title
+    publicationYear
+    author { id name country }
+    publisher { id name city }
+  }
+}

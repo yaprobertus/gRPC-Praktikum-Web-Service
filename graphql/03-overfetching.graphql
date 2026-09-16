@@ -1,0 +1,3 @@
+query OnlyBookTitles {
+  books { title }
+}

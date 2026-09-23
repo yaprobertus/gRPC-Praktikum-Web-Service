@@ -56,3 +56,16 @@ npm run build
 ```
 
 Audit pemenuhan tugas ada di `docs/AUDIT.md`; teks pengumpulan siap salin ada di `docs/PENGUMPULAN.md`.
+
+## Lab 06 — gRPC & Protocol Buffers
+
+Selain GraphQL di atas, project ini juga menyediakan service gRPC untuk
+entitas `Book`, berdasarkan `book.proto` (ditulis dan divalidasi pada
+tugas mandiri Sesi 06) dan dijalankan lewat `grpc/server.js`. Service ini
+membaca dari tabel `books` yang sama persis, lewat koneksi Neon yang
+sama. Panduan lengkap — cara menjalankan lokal, deploy ke Render, dan
+langkah detail pengujian di Postman — ada di `docs/LAB06_GRPC.md`.
+
+```bash
+npm run grpc:dev
+```

@@ -1,0 +1,47 @@
+// book.proto
+// Sesi 06 - gRPC & Protocol Buffers (Latihan Mandiri)
+// Entitas: Book (dari project GraphQL Lab 04-05: authors, publishers, books)
+
+syntax = "proto3";
+
+package library;
+
+// Representasi entitas Book.
+// Field mengikuti tabel books di database dan type Book di GraphQL.
+// Angka di belakang tiap field (= 1, = 2, dst) adalah nomor posisi field
+// pada format biner, bukan nilai data.
+message Book {
+  // books.id (BIGSERIAL)
+  int64 id = 1;
+  // books.title
+  string title = 2;
+  // books.isbn (unik)
+  string isbn = 3;
+  // books.publication_year (1450-2100)
+  int32 publication_year = 4;
+  // books.author_id, relasi ke authors.id
+  int64 author_id = 5;
+  // books.publisher_id, relasi ke publishers.id
+  int64 publisher_id = 6;
+}
+
+// Request untuk mengambil satu buku (padanan query GraphQL book).
+message GetBookRequest {
+  int64 id = 1;
+}
+
+// Request untuk mengambil daftar buku (padanan query GraphQL books).
+message ListBooksRequest {
+}
+
+// Response berisi banyak Book. Kata repeated berarti array atau list.
+message ListBooksResponse {
+  repeated Book books = 1;
+}
+
+// Service gRPC untuk data buku.
+// Model komunikasi kedua method: Unary (satu request, satu response).
+service BookService {
+  rpc GetBook(GetBookRequest) returns (Book);
+  rpc ListBooks(ListBooksRequest) returns (ListBooksResponse);
+}

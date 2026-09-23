@@ -13,11 +13,15 @@
     "db:seed": "node src/db/seed.js",
     "db:setup": "npm run db:migrate && npm run db:seed",
     "test": "node --test",
-    "check": "node --check api/graphql.js && node --check src/schema/resolvers.js && node --test && next build"
+    "check": "node --check api/graphql.js && node --check src/schema/resolvers.js && node --test && next build",
+    "grpc:dev": "node grpc/server.js",
+    "grpc:manual-client": "node grpc/manual-client.js"
   },
   "dependencies": {
     "@apollo/server": "^5.0.0",
     "@as-integrations/next": "^4.0.0",
+    "@grpc/grpc-js": "^1.14.5",
+    "@grpc/proto-loader": "^0.8.1",
     "dataloader": "^2.2.3",
     "dotenv": "^17.2.2",
     "graphql": "^16.11.0",
